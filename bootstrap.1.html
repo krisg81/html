@@ -1,0 +1,116 @@
+<html>
+<head>
+
+<br>
+<style>
+input[type="button"]{
+   border-radius:5px;
+   background-color:green;
+
+}
+</style>
+</head>
+ 
+<script>
+    let firstnum=0
+    let opt=""
+    function digits(digit){
+        if(digit=="0"){
+            if(scrn.value!=""){
+                scrn.value= scrn.value + digit
+            }
+        }else{
+            scrn.value= scrn.value + digit
+        }
+
+    }
+
+    function operators(sign){
+        firstnum=parseInt(scrn.value)
+        opt=sign
+        scrn.value=""
+    }
+    function results(){
+        if(opt=="+"){
+            scrn.value = firstnum + parseInt(scrn.value)
+        }
+        function clearscreen(){
+            scrn.value=""
+            firstnum=0
+            opt=""
+        }
+        
+    }
+</script>
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+    <label class="form-check-label" for="flexCheckIndeterminate">
+      Indeterminate checkbox
+    </label>
+  </div><div class="container">
+    <div class="row align-items-start">
+      <div class="col">
+        One of three columns
+      </div>
+      <div class="col">
+        One of three columns
+      </div>
+      <div class="col">
+        One of three columns
+      </div>
+    </div>
+    <div class="row align-items-center">
+      <div class="col">
+        One of three columns
+      </div>
+      <div class="col">
+        One of three columns
+      </div>
+      <div class="col">
+        One of three columns
+      </div>
+    </div>
+    <div class="row align-items-end">
+      <div class="col">
+        One of three columns
+      </div>
+      <div class="col">
+        One of three columns
+      </div>
+      <div class="col">
+        One of three columns
+      </div>
+    </div>
+  </div>
+
+    
+<table>
+<tr>
+    <td> <input type="button" value="0" onclick="digits(0)"> </td>
+    <td> <input type="button" value="1" onclick="digits(1)"> </td>
+    <td> <input type="button" value="2" onclick="digits(2)"> </td>
+    <td> <input type="button" value="+" onclick="operators('+')"> </td>
+</tr>
+<tr>
+    <td> <input type="button" value="3" onclick="digits(3)"> </td>
+    <td> <input type="button" value="4" onclick="digits(4)"> </td>
+    <td> <input type="button" value="5" onclick="digits(5)"> </td>
+    <td> <input type="button" value="-" onclick="operators('-')"> </td>
+</tr>
+<tr>
+    <td> <input type="button" value="6" onclick="digits(6)"> </td>
+    <td> <input type="button" value="7" onclick="digits(7)"> </td>
+    <td> <input type="button" value="8" onclick="digits(8)"></td>
+    <td> <input type="button" value="x" onclick="operators('x')"> </td>
+</tr>
+<tr>
+    <td> <input type="button" value="9" onclick="digits(9)"> </td>
+    <td> <input type="button" value="C" onclick="clearscreen()"> </td>
+    <td> <input type="button" value="=" onclick="results()"> </td>
+    <td> <input type="button" value="/" onclick="operators('/')"> </td>
+    
+</tr>
+
+</table>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</html>
